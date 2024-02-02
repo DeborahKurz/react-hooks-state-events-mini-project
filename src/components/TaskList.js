@@ -12,8 +12,10 @@ function TaskList({ tasks, setTasks }) {
       {tasks.map(task => (
         <Task
           key={task.text}
-          task={task}
+          // task={task}
           onDeleteTask={deleteTask}
+          text={task.text}
+          category={task.category}
         />
       ))}
     </div>
