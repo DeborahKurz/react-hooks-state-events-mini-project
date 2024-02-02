@@ -10,11 +10,16 @@ console.log({ CATEGORIES, TASKS });
 function App() {
   const [tasks, setTasks] = useState(TASKS)
 
+  function handleTaskFormSubmit(task){
+    const newArray = [...TASKS, task];
+    setTasks(newArray);
+  }
+
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={CATEGORIES} />
-      <NewTaskForm />
+      <CategoryFilter categories={CATEGORIES} tasks={TASKS} setTasks={setTasks} />
+      <NewTaskForm categories={CATEGORIES} onTaskFormSubmit={handleTaskFormSubmit}/>
       <TaskList tasks={tasks} setTasks={setTasks}/>
     </div>
   );
@@ -23,13 +28,7 @@ function App() {
 export default App;
 
 /*
-1. Look in the browser for the task and category data to pass down from app.
-2. task data will go to: TaskList & Task(?)
-3. category data will go to: CategoryFilter & NewTaskForm
-4. Add State
-5. Pass down tasks to TaskList
-6. Add prop & state to TaskList
-7. TaskList: Display each task using the Task Component (make sure to use a key prop)
+1.
 
 */
 

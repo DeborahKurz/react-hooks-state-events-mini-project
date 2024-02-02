@@ -13,7 +13,6 @@ function TaskList({ tasks, setTasks }) {
         <Task
           key={task.text}
           task={task}
-          setTasks={setTasks}
           onDeleteTask={deleteTask}
         />
       ))}

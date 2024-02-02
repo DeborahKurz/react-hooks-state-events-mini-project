@@ -1,6 +1,6 @@
 import React from "react";
 
-function Task({ task, setTasks, onDeleteTask }) {
+function Task({ task, onDeleteTask }) {
 
   return (
     <div className="task">
